@@ -1,7 +1,9 @@
+import 'package:diary_app/components/bottom_line.dart';
+import 'package:diary_app/components/button.dart';
 import 'package:flutter/material.dart';
-
 import '../../components/text_field.dart';
 import '../../constants.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -29,6 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           margin: EdgeInsets.all(21.0),
           child: Column(
             children: [
+              Lottie.asset('images/Login.json'),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text('Login your Journey',
@@ -68,6 +71,14 @@ class _LoginPageState extends State<LoginPage> {
               Align(
                 alignment: Alignment.topRight,
                   child: Text('Forget Password?')),
+              Button(buttonText: 'Open', onTap: (){},),
+              Row(
+                children: [
+                  Text("Don't Have an Account?"),
+                  Text('Signup')
+                ],
+              ),
+              BottomLine()
             ],
           ),
         ),
