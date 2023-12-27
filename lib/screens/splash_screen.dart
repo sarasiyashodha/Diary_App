@@ -2,8 +2,8 @@ import 'package:diary_app/components/bottom_line.dart';
 import 'package:diary_app/constants.dart';
 import 'package:diary_app/screens/login/login_page.dart';
 import 'package:flutter/material.dart';
-
 import '../components/button.dart';
+import 'package:lottie/lottie.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -23,7 +23,11 @@ class _SplashScreenState extends State<SplashScreen> {
           child: Column(
             children: [
               SizedBox(
-                height: 469.0,
+                height: 164.0,
+              ),
+              Lottie.asset('images/Welcome 1.json'),
+              SizedBox(
+                height: 10.0,
               ),
               Row(
                 children: [
@@ -36,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
               Text('Document your life, reflect on your journey.',
                   style: ksubTitleTextStyle),
               SizedBox(
-                height: 90.0,
+                height: 105.0,
               ),
               Button(buttonText: 'Get Started', onTap: () {
                 Navigator.push(
@@ -44,7 +48,7 @@ class _SplashScreenState extends State<SplashScreen> {
                   MaterialPageRoute(builder: (context) => LoginPage()),
                 );
               },),
-              SizedBox(height: 18.0,),
+              SizedBox(height: 20.0,),
               BottomLine()
 
             ],
