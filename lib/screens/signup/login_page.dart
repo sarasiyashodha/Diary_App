@@ -1,6 +1,7 @@
 import 'package:diary_app/components/bottom_line.dart';
 import 'package:diary_app/components/button.dart';
-import 'package:diary_app/screens/login/signup_email_page.dart';
+import 'package:diary_app/screens/signup/forgot_password.dart';
+import 'package:diary_app/screens/signup/signup_email_page.dart';
 import 'package:flutter/material.dart';
 import '../../components/text_field.dart';
 import '../../constants.dart';
@@ -76,12 +77,20 @@ class _LoginPageState extends State<LoginPage> {
             ),
             Align(
               alignment: Alignment.topRight,
-                child: Text('Forget Password?', style: TextStyle(
-                    fontFamily: 'Outfit',
-                    fontWeight: FontWeight.w400,
-                    color: Color(0XFF95796A),
-                    fontSize: 13.0
-                ),),),
+                child: GestureDetector(
+                  onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
+                    );
+                  },
+                  child: Text('Forget Password?', style: TextStyle(
+                      fontFamily: 'Outfit',
+                      fontWeight: FontWeight.w400,
+                      color: Color(0XFF95796A),
+                      fontSize: 13.0
+                  ),),
+                ),),
             SizedBox(
               height: 12.0,
             ),

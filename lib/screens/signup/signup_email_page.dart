@@ -1,8 +1,8 @@
 import 'package:diary_app/components/button.dart';
 import 'package:diary_app/components/text_field.dart';
 import 'package:diary_app/constants.dart';
-import 'package:diary_app/screens/login/login_page.dart';
-import 'package:diary_app/screens/login/verify_email_page.dart';
+import 'package:diary_app/screens/signup/login_page.dart';
+import 'package:diary_app/screens/signup/verify_email_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -26,6 +26,7 @@ class _SignupEmailPageState extends State<SignupEmailPage> {
       body: Container(
           margin: EdgeInsets.all(21.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
                 children: [
@@ -48,12 +49,8 @@ class _SignupEmailPageState extends State<SignupEmailPage> {
               SizedBox(
                 height: 15.0,
               ),
-              Align(
-                alignment: Alignment.topLeft,
-                  child: Text('Signup with Email', style: ktitleTextStyle,)),
-              Align(
-                alignment: Alignment.topLeft,
-                  child: Text('Secure your account with Email confirmation', style: kDescriptionTextStyle,)),
+              Text('Signup with Email', style: ktitleTextStyle,),
+              Text('Secure your account with Email confirmation', style: kDescriptionTextStyle,),
               SizedBox(
                 height: 40.0,
               ),

@@ -1,4 +1,5 @@
-import 'package:diary_app/screens/login/signup_email_page.dart';
+import 'package:diary_app/screens/signup/signup_email_page.dart';
+import 'package:diary_app/screens/signup/signup_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -40,7 +41,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
                       onPressed: (){
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => SignupEmailPage()),
+                          MaterialPageRoute(builder: (context) => LoginPage()),
                         );
                       }),
                 )
@@ -49,12 +50,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
             SizedBox(
               height: 15.0,
             ),
-            Align(
-                alignment: Alignment.topLeft,
-                child: Text('Email Verification', style: ktitleTextStyle,)),
-            Align(
-                alignment: Alignment.topLeft,
-                child: Text('Secure your account with Email confirmation', style: kDescriptionTextStyle,)),
+            Text('Email Verification', style: ktitleTextStyle,),
+            Text('Secure your account with Email confirmation', style: kDescriptionTextStyle,),
             SizedBox(
               height: 40.0,
             ),
@@ -88,9 +85,8 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
               onTap: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginPage()),
+                  MaterialPageRoute(builder: (context) => SignupPage()),
                 );
-
               },)
           ],
         ),

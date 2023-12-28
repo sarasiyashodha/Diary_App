@@ -1,6 +1,6 @@
 import 'package:diary_app/components/bottom_line.dart';
 import 'package:diary_app/constants.dart';
-import 'package:diary_app/screens/login/login_page.dart';
+import 'package:diary_app/screens/signup/login_page.dart';
 import 'package:flutter/material.dart';
 import '../components/button.dart';
 import 'package:lottie/lottie.dart';
