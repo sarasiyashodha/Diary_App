@@ -15,11 +15,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
-  String username = "";
+  String email = "";
   String password = "";
   String error = "";
 
-  final usernameController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool passwordVisible = false;
 
@@ -46,12 +46,12 @@ class _LoginPageState extends State<LoginPage> {
               validator: (val) => val?.isEmpty == true
                   ? "Enter a valid Email"
                   : null,
-              controller: usernameController,
+              controller: emailController,
               hintText: 'Email',
               obscureText: false,
               onChanged: (val) {
                 setState(() {
-                  username = val;
+                  email = val;
                 });
               },
             ),
