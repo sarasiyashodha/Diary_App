@@ -19,13 +19,18 @@ class BottomLine extends StatelessWidget {
                 color: Color(0XFFB3B1B0),
                 fontSize: 12.0),
           ),
-          Text(
-            'Terms of Service ',
-            style: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                color: Color(0XFFFD9340),
-                fontSize: 12.0),
+          GestureDetector(
+            onTap: (){
+              print('tapped');
+            },
+            child: Text(
+              'Terms of Service ',
+              style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  color: Color(0XFFFD9340),
+                  fontSize: 12.0),
+            ),
           ),
           Text(
             'and ',
@@ -35,13 +40,18 @@ class BottomLine extends StatelessWidget {
                 color: Color(0XFFB3B1B0),
                 fontSize: 12.0),
           ),
-          Text(
-            'Privacy Policy.',
-            style: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                color: Color(0XFFFD9340),
-                fontSize: 12.0),
+          GestureDetector(
+            onTap: (){
+              print('tapped');
+            },
+            child: Text(
+              'Privacy Policy.',
+              style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontWeight: FontWeight.w500,
+                  color: Color(0XFFFD9340),
+                  fontSize: 12.0),
+            ),
           ),
         ],
       ),

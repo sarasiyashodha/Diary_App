@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
               Row(
                 children: [
-                  Icon(Icons.face),
+                  Icon(Icons.face, color: Color(0XFF95796A)),
                   Text('The Journey',
                     style: ktitleTextStyle
                   ),
