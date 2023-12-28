@@ -27,6 +27,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
       body: Container(
         margin: EdgeInsets.all(21.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
               height: 25.0,
@@ -39,8 +40,8 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                     MaterialPageRoute(builder: (context) => ForgotPasswordPage()),
                   );
                 }),
-            Text('Forgot Password', style: ktitleTextStyle,),
-            Text('Reset your Password and Regain Access', style: kDescriptionTextStyle,),
+            Text('New Password', style: ktitleTextStyle,),
+            Text('Create a Secure and Strong New Password', style: kDescriptionTextStyle,),
             SizedBox(
               height: 40.0,
             ),
@@ -49,7 +50,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
                   ? "Enter a valid password"
                   : null,
               controller: passwordController,
-              hintText: 'Password',
+              hintText: 'New Password',
               obscureText: !passwordVisible,
               onChanged: (val) {
                 setState(() {
@@ -58,17 +59,7 @@ class _NewPasswordPageState extends State<NewPasswordPage> {
               },
             ),
             SizedBox(
-              height: 14.0,
-            ),
-            Text('Resend Code',
-              style: TextStyle(
-                  fontFamily: 'Poppins',
-                  fontWeight: FontWeight.w400,
-                  color: Color(0XFF95796A),
-                  fontSize: 12.0
-              ),),
-            SizedBox(
-              height: 14.0,
+              height: 40.0,
             ),
             Button(buttonText: 'Confirm',
               onTap: (){
