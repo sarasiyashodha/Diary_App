@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           margin: EdgeInsets.all(21.0),
           child: Column(
             children: [
-              Lottie.asset('images/Login.json'),
+              Lottie.asset('images/Login.json', height: 309.0, width: 309.0),
               Align(
                 alignment: Alignment.topLeft,
                 child: Text('Login your Journey',
@@ -109,6 +109,9 @@ class _LoginPageState extends State<LoginPage> {
                       )
                   )
                 ],
+              ),
+              SizedBox(
+                height: 60.0,
               ),
               BottomLine()
             ],
