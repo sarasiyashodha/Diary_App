@@ -2,19 +2,20 @@ import 'package:diary_app/components/button.dart';
 import 'package:diary_app/components/text_field.dart';
 import 'package:diary_app/constants.dart';
 import 'package:diary_app/screens/login/login_page.dart';
+import 'package:diary_app/screens/login/verify_email_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import '../../components/custom_icon_button.dart';
 
-class SignupEmail extends StatefulWidget {
-  const SignupEmail({super.key});
+class SignupEmailPage extends StatefulWidget {
+  const SignupEmailPage({super.key});
 
   @override
-  State<SignupEmail> createState() => _SignupEmailState();
+  State<SignupEmailPage> createState() => _SignupEmailPageState();
 }
 
-class _SignupEmailState extends State<SignupEmail> {
+class _SignupEmailPageState extends State<SignupEmailPage> {
 
   String email = "";
   final emailController = TextEditingController();
@@ -76,7 +77,7 @@ class _SignupEmailState extends State<SignupEmail> {
                 onTap: (){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => LoginPage()),
+                    MaterialPageRoute(builder: (context) => VerifyEmailPage()),
                   );
 
                 },)

@@ -44,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
             MyTextField(
               validator: (val) => val?.isEmpty == true
-                  ? "Enter a valid Email"
+                  ? "Enter a valid email"
                   : null,
               controller: emailController,
               hintText: 'Email',
@@ -104,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
                   onTap: (){
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => SignupEmail()),
+                      MaterialPageRoute(builder: (context) => SignupEmailPage()),
                     );
                   },
                   child: Text('Signup',
