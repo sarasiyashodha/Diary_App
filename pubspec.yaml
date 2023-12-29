@@ -48,5 +48,15 @@ flutter:
         - asset: fonts/OpenSans-Regular.ttf
           weight: 400
 
+    - family: Epilogue
+      fonts:
+        - asset: fonts/Epilogue-Regular.ttf
+          weight: 400
+
+    - family: PT Sans
+      fonts:
+        - asset: fonts/PTSans-Regular.ttf
+          weight: 400
+
 
 

@@ -7,6 +7,7 @@ import '../../components/custom_icon_button.dart';
 import '../../components/custom_text_field.dart';
 import '../../components/text_field.dart';
 import '../../constants.dart';
+import '../profile/home_page.dart';
 import 'login_page.dart';
 
 class SignupPage extends StatefulWidget {
@@ -191,7 +192,14 @@ class _SignupPageState extends State<SignupPage> {
                 ],
               ),
               SizedBox(height: 45,),
-              Button(buttonText: 'Sign up', onTap: (){},),
+              Button(buttonText: 'Sign up',
+                onTap: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+
+                },),
               SizedBox(height: 12.0,),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
