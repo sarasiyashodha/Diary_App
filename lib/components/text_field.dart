@@ -28,7 +28,7 @@ class MyTextField extends StatelessWidget {
             color: Color(0XFFE5E4E3), // Set your desired border color
             width: 1.0
           ),),
-        fillColor: Color(0XFFF6F8FB),
+        fillColor: Color(0XFFFFFFFF),
         filled: true,
         hintText: hintText,
         hintStyle: TextStyle(
