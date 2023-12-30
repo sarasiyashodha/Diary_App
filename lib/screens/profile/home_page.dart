@@ -1,7 +1,9 @@
 import 'package:diary_app/components/custom_icon_button.dart';
+import 'package:diary_app/screens/profile/search_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/profile.dart';
+import '../../lists.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,6 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  Lists list = Lists();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +33,12 @@ class _HomePageState extends State<HomePage> {
                 SizedBox(
                   width: 75.0,
                 ),
-                CustomIconButton(icon: Icons.search, onPressed: (){}),
+                CustomIconButton(icon: Icons.search, onPressed: (){
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SearchPage()),
+                  );
+                }),
                 SizedBox(
                   width: 10.0,
                 ),
@@ -42,15 +52,16 @@ class _HomePageState extends State<HomePage> {
               width: double.maxFinite,
               height: 91.0,
               child: ListView.builder(
-                itemCount: 10,
+                itemCount: list.dayNames.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index){
+                    bool isFirstElement = index == 0;
                     return Container(
                       margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 8.0, bottom: 0.0),
                       height: 91.0,
                       width: 51.0,
                       decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: isFirstElement ? Color(0XFFE8B2A6) : Colors.white,
                         borderRadius: BorderRadius.circular(18.0), // Set your desired border radius
                         border: Border.all(
                           color: Color(0XFFE8B2A6), // Set your desired border color
@@ -60,19 +71,19 @@ class _HomePageState extends State<HomePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Tue',
+                          Text('${list.dayNames[index]}',
                             style: TextStyle(
                                 fontFamily: 'PT Sans',
                                 fontWeight: FontWeight.w400,
-                                color: Color(0XFFE8B2A6),
+                                color: isFirstElement ? Colors.white : Color(0XFFE8B2A6),
                                 fontSize: 12.0
                             ),
                           ),
-                          Text('23',
+                          Text('${list.days[index]}',
                             style: TextStyle(
                                 fontFamily: 'PT Sans',
                                 fontWeight: FontWeight.w700,
-                                color: Color(0XFFE8B2A6),
+                                color: isFirstElement ? Colors.white : Color(0XFFE8B2A6),
                                 fontSize: 24.0
                             ),
                           ),
@@ -80,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                             style: TextStyle(
                                 fontFamily: 'PT Sans',
                                 fontWeight: FontWeight.w400,
-                                color: Color(0XFFE8B2A6),
+                                color: isFirstElement ? Colors.white : Color(0XFFE8B2A6),
                                 fontSize: 12.0
                             ),
                           )
@@ -114,13 +125,14 @@ class _HomePageState extends State<HomePage> {
                   width: 325.0,
                   height: 27.0,
                   child: ListView.builder(
-                      itemCount: 10,
+                      itemCount: list.categories.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index){
+                        String category = list.categories[index];
                         return Container(
                           margin: EdgeInsets.only(left: 0.0, top: 0.0, right: 10.0, bottom: 0.0),
                           height: 27.0,
-                          width: 72.0,
+                          width: category.length * 8.0,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8.0), // Set your desired border radius
@@ -130,7 +142,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           child: Center(
-                            child: Text('Important',
+                            child: Text(category,
                               style: TextStyle(
                                   fontFamily: 'PT Sans',
                                   fontWeight: FontWeight.w400,
@@ -176,7 +188,7 @@ class _HomePageState extends State<HomePage> {
                 )
             ),
             SizedBox(
-              height: 91.0,
+              height: 85.0,
             ),
             Align(
               alignment: Alignment.bottomRight,
