@@ -63,5 +63,15 @@ flutter:
         - asset: fonts/Raleway-Bold.ttf
           weight: 400
 
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+          weight: 400
+
+    - family: Sarabun
+      fonts:
+        - asset: fonts/Sarabun-Regular.ttf
+          weight: 400
+
 
 

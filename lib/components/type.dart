@@ -4,15 +4,17 @@ class Type extends StatelessWidget {
 
   final Color color;
   final String type;
+  final Function()? onTap;
 
   const Type({
-    super.key, required this.color, required this.type
+    super.key, required this.color, required this.type,
+    required this.onTap
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){},
+      onTap: onTap,
       child: Container(
         height: 55.0,
         width: 335,
