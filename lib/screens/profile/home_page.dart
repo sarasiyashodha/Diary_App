@@ -1,5 +1,6 @@
 import 'package:diary_app/components/custom_icon_button.dart';
 import 'package:diary_app/screens/profile/search_page.dart';
+import 'package:diary_app/screens/profile/types_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/profile.dart';
@@ -13,7 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   Lists list = Lists();
 
   @override
@@ -151,10 +151,6 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                           ),
-
-
-
-
                         );
                       }
                   ),
@@ -197,7 +193,13 @@ class _HomePageState extends State<HomePage> {
                   shape: CircleBorder(),
 
                 child: Icon(Icons.add, color: Colors.white, size: 30.0,),
-                  onPressed: (){}),
+                  onPressed: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => TypesPage()),
+                    );
+
+                  }),
             )
 
 

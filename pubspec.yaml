@@ -58,5 +58,10 @@ flutter:
         - asset: fonts/PTSans-Regular.ttf
           weight: 400
 
+    - family: Raleway
+      fonts:
+        - asset: fonts/Raleway-Bold.ttf
+          weight: 400
+
 
 

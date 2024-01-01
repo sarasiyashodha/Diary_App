@@ -1,6 +1,6 @@
 import 'package:diary_app/components/bottom_line.dart';
 import 'package:diary_app/components/button.dart';
-import 'package:diary_app/screens/signup/forgot_password.dart';
+import 'package:diary_app/screens/signup/forgot_password_page.dart';
 import 'package:diary_app/screens/signup/signup_email_page.dart';
 import 'package:flutter/material.dart';
 import '../../components/text_field.dart';

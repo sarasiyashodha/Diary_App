@@ -1,4 +1,4 @@
-import 'package:diary_app/screens/signup/forgot_password.dart';
+import 'package:diary_app/screens/signup/forgot_password_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/button.dart';

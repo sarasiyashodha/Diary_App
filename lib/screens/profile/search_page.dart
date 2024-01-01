@@ -1,3 +1,4 @@
+import 'package:diary_app/screens/profile/profile_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../components/custom_icon_button.dart';
@@ -46,19 +47,32 @@ class _SearchPageState extends State<SearchPage> {
             SizedBox(
               height: 25.0,
             ),
-            Section(title: 'Profile', description: 'View your profile', imagePath: 'images/create story.png',),
+            Section(title: 'Profile', description: 'View your profile', imagePath: 'images/create story.png',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()),
+                );
+              },
+            ),
             SizedBox(
               height: 20.0,
             ),
-            Section(title: 'Notification', description: 'Water is life. Water is a basic', imagePath: 'images/clock.png',),
+            Section(title: 'Notification', description: 'Water is life. Water is a basic', imagePath: 'images/clock.png',
+              onTap: (){},
+            ),
             SizedBox(
               height: 20.0,
             ),
-            Section(title: 'About us', description: 'View your profile', imagePath: 'images/about.png',),
+            Section(title: 'About us', description: 'View your profile', imagePath: 'images/about.png',
+              onTap: (){},
+            ),
             SizedBox(
               height: 20.0,
             ),
-            Section(title: 'Logout', description: 'View your profile', imagePath: 'images/logout.png',)
+            Section(title: 'Logout', description: 'View your profile', imagePath: 'images/logout.png',
+              onTap: (){},
+            )
 
           ],
         ),
