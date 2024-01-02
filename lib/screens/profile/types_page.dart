@@ -1,6 +1,6 @@
 import 'package:diary_app/components/custom_icon_button.dart';
 import 'package:diary_app/components/type.dart';
-import 'package:diary_app/screens/profile/story_page.dart';
+import 'package:diary_app/screens/profile/create_story_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -129,7 +129,7 @@ class _TypesPageState extends State<TypesPage> {
                       Type(color: Color(0XFFFFB4EA), type: 'Story', onTap: (){
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => StoryPage()),
+                          MaterialPageRoute(builder: (context) => CreateStoryPage()),
                         );
                       },),
                       SizedBox(

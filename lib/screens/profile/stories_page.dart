@@ -1,20 +1,18 @@
-import 'package:diary_app/components/custom_icon_button.dart';
 import 'package:diary_app/screens/profile/search_page.dart';
-import 'package:diary_app/screens/profile/stories_page.dart';
-import 'package:diary_app/screens/profile/types_page.dart';
 import 'package:flutter/material.dart';
 
+import '../../components/custom_icon_button.dart';
 import '../../components/profile.dart';
 import '../../lists.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class StoriesPage extends StatefulWidget {
+  const StoriesPage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<StoriesPage> createState() => _StoriesPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _StoriesPageState extends State<StoriesPage> {
   Lists list = Lists();
 
   @override
@@ -44,10 +42,6 @@ class _HomePageState extends State<HomePage> {
                   width: 10.0,
                 ),
                 CustomIconButton(icon: Icons.notifications, onPressed: (){
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => StoriesPage()),
-                  );
                 })
               ],
             ),
@@ -58,7 +52,7 @@ class _HomePageState extends State<HomePage> {
               width: double.maxFinite,
               height: 91.0,
               child: ListView.builder(
-                itemCount: list.dayNames.length,
+                  itemCount: list.dayNames.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index){
                     bool isFirstElement = index == 0;
@@ -162,62 +156,51 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
 
-
-
               ],
             ),
             SizedBox(
               height: 20.0,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 0.0, right: 0.0, top: 90.0, bottom: 90.0),
-              child: Column(
-                children: [
-                  Image.asset('images/create story.png'),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  Text('Create Your Story Here',
-                      style: TextStyle(
-                          fontFamily: 'Epilogue',
-                          fontWeight: FontWeight.w500,
-                          color: Color(0XFF5B240B),
-                          fontSize: 14.0
-                      )
-                  ),
-                  Text('There are no stories for given data',
-                      style: TextStyle(
-                          fontFamily: 'Epilogue',
-                          fontWeight: FontWeight.w500,
-                          color: Color(0XFFA4A4A4),
-                          fontSize: 14.0
-                      )
-                  ),
-                ],
+            Container(
+              height: 490.0,
+              width: 350.0,
+              child: GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8.0,
+                  mainAxisSpacing: 8.0,
+                ),
+                itemCount: 50,
+                itemBuilder: (context, index) {
+                  return Container(
+                    decoration: BoxDecoration(
+                      color: Color(0XFFFFD8F4),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Align(
+                          child: Text(
+                            "To-do list",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16.0,
+                            ),
+                          ),
+                        ),
 
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: FloatingActionButton(
-                backgroundColor: Color(0XFFE8B2A6),
-                  shape: CircleBorder(),
 
-                child: Icon(Icons.add, color: Colors.white, size: 30.0,),
-                  onPressed: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => TypesPage()),
-                    );
-
-                  }),
+                      ],
+                    ),
+                  );
+                },
+              )
             )
-
-
           ],
         ),
+
       ),
     );
   }
 }
-

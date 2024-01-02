@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 import '../../components/custom_icon_button.dart';
 
-class StoryPage extends StatefulWidget {
-  const StoryPage({super.key});
+class CreateStoryPage extends StatefulWidget {
+  const CreateStoryPage({super.key});
 
   @override
-  State<StoryPage> createState() => _StoryPageState();
+  State<CreateStoryPage> createState() => _CreateStoryPageState();
 }
 
-class _StoryPageState extends State<StoryPage> {
+class _CreateStoryPageState extends State<CreateStoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
