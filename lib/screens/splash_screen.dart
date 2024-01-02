@@ -13,6 +13,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Icon(Icons.face, color: Color(0XFF95796A)),
                 Text('The Journey',
-                  style: ktitleTextStyle
+                    style: ktitleTextStyle
                 ),
               ],
             ),
@@ -53,6 +54,10 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
       ),
+
+
+
+
 
     );
 

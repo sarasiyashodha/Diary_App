@@ -1,3 +1,4 @@
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:diary_app/screens/profile/search_page.dart';
 import 'package:flutter/material.dart';
 
@@ -41,8 +42,12 @@ class _StoriesPageState extends State<StoriesPage> {
                 SizedBox(
                   width: 10.0,
                 ),
-                CustomIconButton(icon: Icons.notifications, onPressed: (){
-                })
+                CustomIconButton(icon: Icons.notifications,
+                  onPressed: () async {
+                    String uniqueId = await getAndroidDeviceId();
+                    print('Android Device ID: $uniqueId');
+                  },
+                )
               ],
             ),
             SizedBox(
@@ -202,5 +207,15 @@ class _StoriesPageState extends State<StoriesPage> {
 
       ),
     );
+  }
+  Future<String> getAndroidDeviceId() async {
+    String uniqueId = '';
+    try {
+      var androidInfo = await DeviceInfoPlugin().androidInfo;
+      uniqueId = androidInfo.id;
+    } catch (e) {
+      print('Error getting Android device ID: $e');
+    }
+    return uniqueId;
   }
 }
