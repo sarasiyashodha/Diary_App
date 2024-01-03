@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:http/http.dart';
 import 'package:diary_app/models/exception_model.dart';
 
@@ -8,8 +9,23 @@ class ApiService {
 
   Future<void> sendException(ExceptionModel exception) async {
     try {
+      try{
+        final androidInfo = await DeviceInfoPlugin().androidInfo;
+        final deviceId = androidInfo.id;
+
+        exception.deviceId = deviceId;
+        print(deviceId);
+
+      }
+      catch(e){
+        print("Error of getting device id: $e");
+      }
       final String endpoint = "$baseUrl/Exception";
-      final Map<String, String> headers = {'Content-Type': 'application/json'};
+
+      final Map<String, String> headers = {
+        'Content-Type': 'application/json'
+      };
+
       final String requestBody = jsonEncode(exception.toJson());
 
       final Response response =
